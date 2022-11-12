@@ -7,6 +7,7 @@ import { ToastContainer } from 'react-toastify';
 import CourseCardList from './pages/CourseCardList';
 import { GoogleOAuthProvider } from '@react-oauth/google';
 import CourseDetailPanel from './pages/CourseDetailPanel';
+import Question from "./components/questionsAnswers/Question"
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
           <Route name="courseDetailPanel" path="/courses/:codeName" element={<CourseDetailPanel />} />
           {/* <Route path="*" element={<NotFound />} /> */}
           <Route path='/' element={<Login />} />
+          <Route path='/question' element={<Question/>}/>
         </Routes>
         <ToastContainer
           position="top-right"
