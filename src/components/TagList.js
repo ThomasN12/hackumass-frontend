@@ -57,3 +57,5 @@ const TagList = () => {
             </div>
         </div>
 }
+
+export default TagList;

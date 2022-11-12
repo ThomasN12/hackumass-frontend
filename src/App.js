@@ -5,6 +5,7 @@ import Login from "./components/login/Login"
 import "bootstrap/dist/css/bootstrap.css";
 import TagList from './components/TagList';
 import { GoogleOAuthProvider } from '@react-oauth/google';
+import Question from "./components/questionsAnswers/Question"
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
           <Route path="/tags" element={<TagList />} />
           {/* <Route path="*" element={<NotFound />} /> */}
           <Route path='/' element={<Login />} />
+          <Route path='/question' element={<Question/>}/>
         </Routes>
       </GoogleOAuthProvider>
 
