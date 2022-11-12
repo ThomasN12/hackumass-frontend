@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./CourseCard.css"
 const CourseCard = (props) => {
     let num = props.index % 5 + 1;
@@ -7,7 +8,10 @@ const CourseCard = (props) => {
             <p className="card__exit"><i className="fas fa-times"></i></p>
             <h2 className="card__title">{props.codeName}: {props.fullName}</h2>
             <p className="card__apply">
-                <a className="card__link" href="#">Details<i className="fas fa-arrow-right"></i></a>
+                <Link className="card__link"
+                    to={`/courses/${props.codeName.replace(/\s+/g, '')}`}
+                    // state={{ codeName: props.codeName }}
+                >Details<i className="fas fa-arrow-right"></i></Link>
             </p>
         </div>
     )

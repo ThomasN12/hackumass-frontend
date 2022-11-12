@@ -1,6 +1,6 @@
 import "./CourseCardList.css"
 import { useEffect, useState } from "react";
-import CourseCard from "./CourseCard";
+import CourseCard from "../components/CourseCard";
 import axios from 'axios';
 import { toast } from 'react-toastify';
 
