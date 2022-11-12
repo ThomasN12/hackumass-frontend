@@ -3,7 +3,8 @@ import Layout from './components/layout/Layout';
 import { Route, Routes } from "react-router-dom";
 import Login from "./components/login/Login"
 import "bootstrap/dist/css/bootstrap.css";
-import TagList from './components/TagList';
+import { ToastContainer } from 'react-toastify';
+import CourseCardList from './components/CourseCardList';
 import { GoogleOAuthProvider } from '@react-oauth/google';
 
 
@@ -14,10 +15,21 @@ function App() {
         <Routes>
           {/* <Route path="/" element={<HomePage />} /> */}
           <Route path="/login" element={<Login />} />
-          <Route path="/tags" element={<TagList />} />
+          <Route path="/tags" element={<CourseCardList />} />
           {/* <Route path="*" element={<NotFound />} /> */}
           <Route path='/' element={<Login />} />
         </Routes>
+        <ToastContainer
+          position="top-right"
+          autoClose={2000}
+          hideProgressBar
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover={false}
+        />
       </GoogleOAuthProvider>
 
     </Layout>

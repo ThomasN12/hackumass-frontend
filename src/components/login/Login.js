@@ -1,25 +1,27 @@
-import "./login.css"
-import React from "react"
+import "./login.css";
+import React from "react";
+import axios from "axios";
 import { GoogleLogin } from '@react-oauth/google';
-
+import { toast } from 'react-toastify';
 const Login = (props) => {
 
   const responseSuccessGoogle = (res) => {
     const baseUrl = process.env.REACT_APP_ROOT_API;
-    // axios.post(`${baseUrl}/user/googlelogin`, { idToken: res.credential }).then(res => {
-    //   const { data } = res;
-    //   if (data.success)
-    //   {
-    //     localStorage.setItem('token', data.token);
-    //     navigate('/main');
-    //     toast.success(data.message);
-    //   } else
-    //   {
-    //     toast.error(data.message);
-    //   }
-    // }).catch(err => {
-    //   toast.error(err.message);
-    // })
+    axios.post(`${baseUrl}/auth/googlelogin`, { idToken: res.credential }).then(res => {
+      const { data } = res;
+      const { status } = data;
+      if (status === 200)
+      {
+        localStorage.setItem('token', data.data.token);
+        toast.success(data.success);
+      } else
+      {
+        console.log(data.message)
+        toast.error(data.message);
+      }
+    }).catch(err => {
+      toast.error(err.message);
+    })
   }
 
   const responseErrorGoogle = (err) => {
@@ -66,3 +68,5 @@ const Login = (props) => {
     />
   )
 }
+
+export default Login;
