@@ -1,51 +1,158 @@
+import "./Question.css";
 const Question = (props) => {
   return (
+    <div class="container mb-5 mt-5">
+			  
+			     <div class="card">
+					<div class="row">
+						<div class="col-md-12">
+							<h3 class="text-center mb-5">
+								Nested comment section
+							</h3>
+							<div class="row">
+								<div class="col-md-12">
+									<div class="media">
+										<img class="mr-3 rounded-circle" alt="Bootstrap Media Preview" src="https://i.imgur.com/stD0Q19.jpg" />
+										<div class="media-body">
+											<div class="row">
+											 <div class="col-8 d-flex">
+											    <h5>Maria Smantha</h5>
+												<span>- 2 hours ago</span>
+											 </div>
+											 
+											 <div class="col-4">
+											 
+											 <div class="pull-right reply">
+											 
+											<a href="#"><span><i class="fa fa-reply"></i> reply</span></a>
+											 
+											 </div>
+											 
+											 </div>
+											</div>		
+											
+											It is a long established fact that a reader will be distracted by the readable content of a page.
+                                            
+											<div class="media mt-4">
+												 <a class="pr-3" href="#"><img class="rounded-circle" alt="Bootstrap Media Another Preview" src="https://i.imgur.com/xELPaag.jpg" /></a>
+												<div class="media-body">
+														
+													<div class="row">
+											 <div class="col-12 d-flex">
+											    <h5>Simona Disa</h5>
+												<span>- 3 hours ago</span>
+											 </div>
+											 
+											
+											</div>
 
+													letters, as opposed to using 'Content here, content here', making it look like readable English.
+												</div>
+											</div>
+											
+											<div class="media mt-3">
+												 <a class="pr-3" href="#"><img class="rounded-circle" alt="Bootstrap Media Another Preview" src="https://i.imgur.com/nAcoHRf.jpg" /></a>
+												<div class="media-body">
+												    <div class="row">
+											 <div class="col-12 d-flex">
+											    <h5>John Smith</h5>
+												<span>- 4 hours ago</span>
+											 </div>
+											 
+											
+											</div>
+											
+													the majority have suffered alteration in some form, by injected humour, or randomised words.
+                                                    
+												</div>
+											</div>
+										</div>
+									</div>
+									
+									
+									
+									
+									<div class="media mt-4">
+										<img class="mr-3 rounded-circle" alt="Bootstrap Media Preview" src="https://i.imgur.com/xELPaag.jpg" />
+										<div class="media-body">
+											<div class="row">
+											 <div class="col-8 d-flex">
+											    <h5>Shad f</h5>
+												<span>- 2 hours ago</span>
+											 </div>
+											 
+											 <div class="col-4">
+											 
+											 <div class="pull-right reply">
+											 
+											 <a href="#"><span><i class="fa fa-reply"></i> reply</span></a>
+											 
+											 </div>
+											 
+											 </div>
+											</div>		
+											
+											The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33.
+											<div class="media mt-4">
+												 <a class="pr-3" href="#"><img class="rounded-circle" alt="Bootstrap Media Another Preview" src="https://i.imgur.com/nUNhspp.jpg" /></a>
+												<div class="media-body">
+														
+													<div class="row">
+											 <div class="col-12 d-flex">
+											    <h5>Andy flowe</h5>
+												<span>- 5 hours ago</span>
+											 </div>
+											 
+											 
+											</div>
 
-
-
-        <div class="card col-6 p-3">
-
-            <div class="d-flex justify-content-between align-items-center">
-
-          <div class="user d-flex flex-row align-items-center">
-
-            <span>
-              <div class="font-weight-bold text-primary">james_olesenn</div> 
-              <div class="font-weight-bold">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum nihil unde nesciunt enim magni natus tempora perferendis temporibus eum sequi fuga eligendi officiis, non dolorem eaque a fugit error quasi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, modi recusandae rem fuga expedita voluptas autem ea, sed fugiat quas voluptate inventore quis! Consec
-              </div>
-            </span>
-              
-          </div>
-
-
-          <div>2 days ago</div>
-
-          </div>
-
-
-          <div class="action d-flex justify-content-between mt-2 align-items-center">
-
-            <div class="reply px-4">
-                <small>Remove</small>
-                <span class="dots"></span>
-                <small>Reply</small>
-                <span class="dots"></span>
-                <small>Translate</small>
-               
-            </div>
-
-            <div class="icons align-items-center">
-
-                <i class="fa fa-star text-warning"></i>
-                <i class="fa fa-check-circle-o check-icon"></i>
-                
-            </div>
-            </div>
-            </div>
-
-
-
-  )}
+													Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+												</div>
+											</div>
+											
+											<div class="media mt-3">
+												 <a class="pr-3" href="#"><img class="rounded-circle" alt="Bootstrap Media Another Preview" src="https://i.imgur.com/HjKTNkG.jpg" /></a>
+												<div class="media-body">
+												    <div class="row">
+											 <div class="col-12 d-flex">
+											    <h5>Simp f</h5>
+												<span>- 5 hours ago</span>
+											 </div>
+											 
+											
+											</div>
+											
+													a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur
+												</div>
+											</div>
+                                            
+                                            
+                                            <div class="media mt-3">
+												 <a class="pr-3" href="#"><img class="rounded-circle" alt="Bootstrap Media Another Preview" src="https://i.imgur.com/nAcoHRf.jpg" /></a>
+												<div class="media-body">
+												    <div class="row">
+											 <div class="col-12 d-flex">
+											    <h5>John Smith</h5>
+												<span>- 4 hours ago</span>
+											 </div>
+											 
+											
+											</div>
+											
+													the majority have suffered alteration in some form, by injected humour, or randomised words.
+                                                    
+												</div>
+											</div>
+										</div>
+									</div>
+									
+								</div>
+							</div>
+						</div>
+					</div>
+					</div>
+				</div>
+  );
+};
 
 export default Question;
