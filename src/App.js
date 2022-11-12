@@ -1,13 +1,18 @@
 import './App.css';
-import Login from "./components/login/Login.js"
+import Layout from './components/layout/Layout';
+import { Route, Routes } from "react-router-dom";
 
 function App() {
   return (
-      <div>
-            <h1>Temp</h1>
-      <Login/>
+    <Layout>
+      <Routes>
+        {/* <Route path="/" element={<HomePage />} />
+        <Route path="/campaigns" element={<AllCampaigns />} />
+        <Route path="/our-team" element={<EBoardMembers />} />
+        <Route path="*" element={<NotFound />} /> */}
+      </Routes>
+    </Layout>
 
-      </div>
   );
 }
 
