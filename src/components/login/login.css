@@ -6,6 +6,10 @@
   height: 100vh;
 }
 
+.option {
+  cursor: pointer;
+}
+
 .Auth-form {
   width: 420px;
   box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
