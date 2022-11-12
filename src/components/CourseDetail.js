@@ -1,6 +1,25 @@
 import { Fragment } from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
 import "./CourseDetail.css";
+import "./Button.css";
+import { toast } from "react-toastify";
 const CourseDetail = (props) => {
+    const [courseData, setCourseData] = useState(null)
+    useEffect(() => {
+        const baseUrl = process.env.REACT_APP_ROOT_API;
+        axios.get(`${baseUrl}/course/${props.codeName.toLowerCase()}`).then(res => {
+            const { data } = res;
+            const { status } = data;
+            if (status === 200)
+            {
+                setCourseData(data.data[0])
+            }
+        }).catch(err => {
+            toast.error(err.message);
+            // console.log(err)
+        })
+    }, [])
     return (
         <Fragment>
             {/* <svg display="none" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -28,17 +47,17 @@ const CourseDetail = (props) => {
 
                 <div className="blog-body">
                     <div className="blog-title">
-                        <h1><a href="#">COMPSCPI 187</a></h1>
+                        <h1><a href="#">{courseData ? courseData.codeName.toUpperCase() : ""}</a></h1>
                     </div>
                     <div className="blog-summary">
-                        <p>I love working on fresh designs that <a href="https://www.youtube.com/watch?v=hANtM1vJvOo">breathe</a>. To that end, I need to freshen up my portfolio here because it does exactly the opposite. For the next month I will be working almost exclusively on my portfolio. Sounds like a lot of fun!</p>
+                        <p>{courseData ? courseData.description : ""}</p>
                     </div>
                     <div className="blog-tags">
                         <ul>
-                            <li><a href="#">css</a></li>
-                            <li><a href="#">web design</a></li>
-                            <li><a href="#">codepen</a></li>
-                            <li><a href="https://twitter.com/russbeye">twitter</a></li>
+                            {/* <li><a href="#">css</a></li>
+                            <li><a href="#">web design</a></li> */}
+                            <button className="button button--pan mx-2"><span>Q&A</span></button>
+                            <button className="button button--pan mx-2"><span>Reviews</span></button>
                         </ul>
                     </div>
                 </div>

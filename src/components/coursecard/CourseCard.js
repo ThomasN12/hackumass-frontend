@@ -6,7 +6,7 @@ const CourseCard = (props) => {
         <div className={`card card-${num}`}>
             <div className="card__icon"><i className="fas fa-bolt"></i></div>
             <p className="card__exit"><i className="fas fa-times"></i></p>
-            <h2 className="card__title">{props.codeName}: {props.fullName}</h2>
+            <h2 className="card__title">{props.codeName.toUpperCase()}: {props.fullName}</h2>
             <p className="card__apply">
                 <Link className="card__link"
                     to={`/courses/${props.codeName.replace(/\s+/g, '')}`}
