@@ -8,6 +8,8 @@ import CourseCardList from './pages/CourseCardList';
 import { GoogleOAuthProvider } from '@react-oauth/google';
 import CourseDetailPanel from './pages/CourseDetailPanel';
 import Question from "./components/questionsAnswers/Question"
+import ReviewPanel from './components/reviews/ReviewPanel/StarRatingCourse';
+import ReviewForm from './components/reviews/ReviewPanel/ReviewForm';
 
 
 function App() {
@@ -22,6 +24,7 @@ function App() {
           {/* <Route path="*" element={<NotFound />} /> */}
           <Route path='/' element={<Login />} />
           <Route path='/question' element={<Question/>}/>
+          <Route path='/reviews' element={<ReviewForm />}/>
         </Routes>
         <ToastContainer
           position="top-right"
