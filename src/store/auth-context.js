@@ -20,11 +20,12 @@ export const AuthContextProvider = (props) => {
     // }
     // );
 
-    const loginHandler = () => {
+    const loginHandler = (userInfo) => {
         // We should of course check email and password
         // But it's just a dummy/ demo anyways
         // localStorage.setItem('isLoggedIn', '1');
         setIsLoggedIn(true);
+        setUserInfo(userInfo);
     };
 
     const logoutHandler = () => {

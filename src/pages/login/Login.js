@@ -14,8 +14,8 @@ const Login = (props) => {
       if (status === 200)
       {
         localStorage.setItem('token', data.data.token);
-        toast.success(data.success);
-        ctx.onLogin();
+        toast.success(data.message);
+        ctx.onLogin(data.data.user);
       } else
       {
         console.log(data.message)

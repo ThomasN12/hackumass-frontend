@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { CommentSection } from 'react-comments-section'
 import "./Question.css";
 import 'react-comments-section/dist/index.css'
+import AuthContext from "../../store/auth-context";
 
 const Question = (props) => {
     // const data = [
@@ -15,6 +16,7 @@ const Question = (props) => {
     //         replies: []
     //     }
     // ]
+    const ctx = useContext(AuthContext);
     const data = props.courseQuestions.map(question => {
         return {
             userId: question.user,
@@ -26,6 +28,10 @@ const Question = (props) => {
             replies: question.replies,
         }
     })
+
+    const handleAskQuestion = (userId, ) => {
+
+    }
     console.log(data);
     return <CommentSection
         currentUser={null ? {

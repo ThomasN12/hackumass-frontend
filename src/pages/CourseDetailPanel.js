@@ -7,6 +7,7 @@ import { toast } from "react-toastify";
 
 // import Question from "../components/questionsAnswers/Question";
 import Question from "../components/question/Question";
+import ReviewsList from "../components/reviews/ReviewsList";
 const CourseDetailPanel = () => {
     const params = useParams();
     const [courseData, setCourseData] = useState(null)
@@ -34,7 +35,8 @@ const CourseDetailPanel = () => {
         <Fragment>
             <CourseDetail codeName={courseData ? courseData.codeName.toUpperCase() : ""} description={courseData ? courseData.description : ""}  />
             {/* <Question /> */}
-            <Question courseQuestions={courseQuestions} />
+            {/* <Question courseQuestions={courseQuestions} /> */}
+            <ReviewsList />
         </Fragment>
     )
 }

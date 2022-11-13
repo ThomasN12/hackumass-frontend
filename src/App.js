@@ -7,10 +7,10 @@ import { ToastContainer } from 'react-toastify';
 import CourseCardList from './pages/CourseCardList';
 import { GoogleOAuthProvider } from '@react-oauth/google';
 import CourseDetailPanel from './pages/CourseDetailPanel';
-import ReviewPanel from './components/reviews/ReviewPanel/StarRatingCourse';
-import ReviewForm from './components/reviews/ReviewPanel/ReviewForm';
+// import ReviewPanel from './components/reviews/ReviewPanel/StarRatingCourse';
+// import ReviewForm from './components/reviews/ReviewPanel/ReviewForm';
 
-import Question from "./components/questionsAnswers/Question"
+// import Question from "./components/questionsAnswers/Question"
 import ReviewsList from './components/reviews/ReviewsList';
 
 function App() {
@@ -25,9 +25,7 @@ function App() {
           {/* <Route path="*" element={<NotFound />} /> */}
           <Route path='/' element={<Login />} />
           {/* <Route path='/question' element={<Question/>}/> */}
-          <Route path='/reviews' element={<ReviewForm />}/>
-          <Route path='/question' element={<Question/>}/>
-          <Route path='/reviews' element={<ReviewsList />}/>
+          <Route path='/reviews' element={<ReviewsList />} />
         </Routes>
         <ToastContainer
           position="top-right"

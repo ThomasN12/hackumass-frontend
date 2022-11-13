@@ -28,7 +28,7 @@ const CourseCardList = () => {
                 <h1 className="heading__title">UMass CS Courses</h1>
                 <p className="heading__credits"><a className="heading__link" target="_blank" href="https://dribbble.com/sl">Design by Simon Lurwer on Dribbble</a></p>
             </div>
-            <div className="cards">
+            <div className="course-cards">
                 {courseCardListData.map((card, index) => {
                     return <CourseCard index={index} key={card._id} codeName={card.codeName} fullName={card.fullName} />
                 })}
