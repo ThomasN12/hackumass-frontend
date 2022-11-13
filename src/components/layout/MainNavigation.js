@@ -1,8 +1,17 @@
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import AuthContext from "../../store/auth-context";
+import { toast } from "react-toastify";
 const MainNavigation = () => {
     const ctx = useContext(AuthContext);
+    const handleLogout = () => {
+        const foundToken = localStorage.getItem("token");
+        if (foundToken)
+        {
+            localStorage.removeItem("token");
+            ctx.onLogout();
+        }
+    }
     return (
         <header>
             <nav className="navbar navbar-expand-lg bg-light">
@@ -24,7 +33,7 @@ const MainNavigation = () => {
                                     <span className="nav-link">Hi, {ctx.userInfo.firstName}</span>
                                 </li>
                                 <li className="nav-item">
-                                    <button className="btn btn-danger">Logout</button>
+                                    <button className="btn btn-danger" onClick={handleLogout}>Logout</button>
                                 </li></>
                                  : <li className="nav-item">
                                 <Link to="/login" className="btn btn-success">Login</Link>
