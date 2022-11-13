@@ -5,6 +5,10 @@ import Button from "react-bootstrap/Button";
 import axios from "axios";
 import AuthContext from '../../store/auth-context';
 
+function refreshPage() {
+  window.location.reload(false);
+}
+
 const ReviewForm = (props) => {
   const ctx = useContext(AuthContext);
   const [show, setShow] = useState(false);
@@ -63,7 +67,8 @@ const ReviewForm = (props) => {
           fun: data.data.funRating,
           recommended: data.data.recommendedRating,
         }
-        console.log(foundReview)
+        // console.log(foundReview)
+        refreshPage();
         // props.onAddReview(foundReview);
       }
     }).catch(err => {
