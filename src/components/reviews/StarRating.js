@@ -1,14 +1,12 @@
-import "./StarRatingCourse.css";
-const ReviewPanel = (props) => {
+import "./StarRating.css";
+const StarRating = (props) => {
   return (
-    <div className="">
+    <div className="container border-end border-end-dark">
 
-      <div className="feedback">
-        <div>
-          Overall, how do you rate this course?
-        </div>
-
+      <div className="">
+        <div className="fw-bold">How would you rate this class overall?</div>
         <div className="rating">
+          
           <input type="radio" name="rating" id="rating-5"/>
           <label for="rating-5"></label>
           <input type="radio" name="rating" id="rating-4" />
@@ -313,4 +311,4 @@ const ReviewPanel = (props) => {
   );
 };
 
-export default ReviewPanel;
+export default StarRating;
