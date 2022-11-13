@@ -7,6 +7,10 @@ const ReviewForm = (props) => {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const submitReview = (e) => {
+    e.preventDefault();
+    handleClose();
+  };
 
   return (
     <div className="d-flex flex-row justify-content-center">
@@ -97,7 +101,7 @@ const ReviewForm = (props) => {
             <Button variant="secondary" onClick={handleClose}>
               Close
             </Button>
-            <Button variant="primary" onClick={handleClose}>
+            <Button variant="primary" onClick={submitReview}>
               Submit
             </Button>
           </Modal.Footer>
@@ -107,9 +111,6 @@ const ReviewForm = (props) => {
   );
 };
 
-const submitReview = (e) => {
-  e.preventDefault();
-  console.log("cac");
-};
+
 
 export default ReviewForm;
