@@ -1,25 +1,9 @@
 import { Fragment } from "react";
-import { useEffect, useState } from "react";
-import axios from "axios";
+
 import "./CourseDetail.css";
 import "./Button.css";
-import { toast } from "react-toastify";
 const CourseDetail = (props) => {
-    const [courseData, setCourseData] = useState(null)
-    useEffect(() => {
-        const baseUrl = process.env.REACT_APP_ROOT_API;
-        axios.get(`${baseUrl}/course/${props.codeName.toLowerCase()}`).then(res => {
-            const { data } = res;
-            const { status } = data;
-            if (status === 200)
-            {
-                setCourseData(data.data[0])
-            }
-        }).catch(err => {
-            toast.error(err.message);
-            // console.log(err)
-        })
-    }, [])
+
     return (
         <Fragment>
             {/* <svg display="none" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -47,10 +31,10 @@ const CourseDetail = (props) => {
 
                 <div className="blog-body">
                     <div className="blog-title">
-                        <h1><a href="#">{courseData ? courseData.codeName.toUpperCase() : ""}</a></h1>
+                        <h1><a href="#">{props.codeName}</a></h1>
                     </div>
                     <div className="blog-summary">
-                        <p>{courseData ? courseData.description : ""}</p>
+                        <p>{props.description}</p>
                     </div>
                     <div className="blog-tags">
                         <ul>

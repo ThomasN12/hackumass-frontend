@@ -1,10 +1,11 @@
 import "./login.css";
-import React from "react";
+import React, { useContext } from "react";
 import axios from "axios";
 import { GoogleLogin } from '@react-oauth/google';
 import { toast } from 'react-toastify';
+import AuthContext from "../../store/auth-context";
 const Login = (props) => {
-
+  const ctx = useContext(AuthContext);
   const responseSuccessGoogle = (res) => {
     const baseUrl = process.env.REACT_APP_ROOT_API;
     axios.post(`${baseUrl}/auth/googlelogin`, { idToken: res.credential }).then(res => {
@@ -14,6 +15,7 @@ const Login = (props) => {
       {
         localStorage.setItem('token', data.data.token);
         toast.success(data.success);
+        ctx.onLogin();
       } else
       {
         console.log(data.message)
@@ -31,39 +33,39 @@ const Login = (props) => {
     <div className="Auth-form-container">
       <form className="Auth-form">
         <div className="Auth-form-content">
-          <h3 className="Auth-form-title">Sign In</h3>
-          <div className="form-group mt-3">
+          <h3 className="Auth-form-title">Sign In With Your UMass Email</h3>
+          {/* <div className="form-group mt-3">
             <label>Email address</label>
             <input
               type="email"
               className="form-control mt-1"
               placeholder="Enter email"
             />
-          </div>
+          </div> */}
           <div className="form-group mt-3">
-            <label>Password</label>
+            {/* <label>Password</label>
             <input
               type="password"
               className="form-control mt-1"
               placeholder="Enter password"
+            /> */}
+            <GoogleLogin
+              buttonText="Login"
+              onSuccess={responseSuccessGoogle}
+              onFailure={responseErrorGoogle}
+              cookiePolicy={'single_host_origin'}
+              useOneTap
             />
           </div>
-          <div className="d-grid gap-2 mt-3">
+          {/* <div className="d-grid gap-2 mt-3">
             <button type="submit" className="btn btn-primary">
               Submit
             </button>
-          </div>
-          <p className="forgot-password text-right mt-2">
+          </div> */}
+          {/* <p className="forgot-password text-right mt-2">
             Forgot <a href="#">password?</a>
-          </p>
+          </p> */}
         </div>
-        <GoogleLogin
-          buttonText="Login"
-          onSuccess={responseSuccessGoogle}
-          onFailure={responseErrorGoogle}
-          cookiePolicy={'single_host_origin'}
-          useOneTap
-        />
       </form>
 
     </div>
