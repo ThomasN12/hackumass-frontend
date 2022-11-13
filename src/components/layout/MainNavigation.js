@@ -22,7 +22,7 @@ const MainNavigation = () => {
                             {ctx.isLoggedIn ? <li className="nav-item">
                                 <button className="btn btn-danger">Logout</button>
                             </li> : <li className="nav-item">
-                                <Link className="btn btn-success">Login</Link>
+                                <Link to="/login" className="btn btn-success">Login</Link>
                             </li>}
                             {/* <li className="nav-item dropdown">
                                 <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
