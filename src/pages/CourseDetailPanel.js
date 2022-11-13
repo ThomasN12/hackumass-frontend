@@ -8,6 +8,8 @@ import { toast } from "react-toastify";
 // import Question from "../components/questionsAnswers/Question";
 import Question from "../components/question/Question";
 import ReviewsList from "../components/reviews/ReviewsList";
+import ReviewForm from "../components/reviews/ReviewForm";
+
 const CourseDetailPanel = () => {
     const params = useParams();
     const [courseData, setCourseData] = useState(null);

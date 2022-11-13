@@ -23,42 +23,42 @@ const ReviewCard = (props) => {
   };
   return viewFront ? (
     <div className="container d-flex justify-content-center">
-      <div className="card">
+      <div className="card w-50">
         <div className="card-body">
           <div className="card-text">Name: {props.name}</div>
           <div className="card-text">
-            Rating: {props.rating}
-            <i className="bi bi-star-fill"></i>
+            Rating: {props.rating}{" "}
+            <i className="bi bi-star-fill text-warning"></i>
           </div>
           <div className="card-text">Review: {props.text}</div>
         </div>
         <div className="row d-flex justify-content-center">
           <button onClick={handleViewChange} className="btn btn-primary w-25">
-            More
+            <i className="bi bi-chevron-double-right"></i>
           </button>
         </div>
       </div>
     </div>
   ) : (
     <div className="container d-flex justify-content-center">
-      <div className="card">
+      <div className="card w-50">
         <div className="card-body">
           <div className="card-text">
-            Difficulty: {props.difficulty} <i className="bi bi-star-fill"></i>
+            Difficulty: {props.difficulty} <i className="bi bi-star-fill text-warning"></i>
           </div>
           <div className="card-text">
-            Effort: {props.effort} <i className="bi bi-star-fill"></i>
+            Effort: {props.effort} <i className="bi bi-star-fill text-warning"></i>
           </div>
           <div className="card-text">
-            Fun: {props.fun} <i className="bi bi-star-fill"></i>
+            Fun: {props.fun} <i className="bi bi-star-fill text-warning"></i>
           </div>
           <div className="card-text">
-            Recommended: {props.recommended} <i className="bi bi-star-fill"></i>
+            Recommended: {props.recommended} <i className="bi bi-star-fill text-warning"></i>
           </div>
         </div>
         <div className="row d-flex justify-content-center">
           <button onClick={handleViewChange} className="btn btn-primary w-25">
-            Back
+            <i className="bi bi-chevron-double-left"></i>
           </button>
         </div>
       </div>
@@ -87,6 +87,15 @@ const reviews = [
   },
   {
     name: "Thinh",
+    text: "lop nhu cac",
+    rating: 3,
+    difficulty: 3,
+    effort: 2,
+    fun: 3,
+    recommended: 3,
+  },
+  {
+    name: "Dang",
     text: "lop nhu cac",
     rating: 3,
     difficulty: 3,
