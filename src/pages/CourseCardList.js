@@ -25,8 +25,7 @@ const CourseCardList = () => {
     return (
         <div className="main-container">
             <div className="heading">
-                <h1 className="heading__title">UMass CS Courses</h1>
-                <p className="heading__credits"><a className="heading__link" target="_blank" href="https://dribbble.com/sl">Design by Simon Lurwer on Dribbble</a></p>
+                <h1 className="heading__title">UMass Computer Science Courses</h1>
             </div>
             <div className="course-cards">
                 {courseCardListData.map((card, index) => {
