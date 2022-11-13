@@ -18,6 +18,7 @@ import AuthContext from './store/auth-context';
 import Landing from './pages/Landing';
 function App() {
   const ctx = useContext(AuthContext);
+  const clientId = process.env.REACT_APP_OATH_CLIENT_ID;
   useEffect(() => {
     const token = localStorage.getItem('token')
     if (!token)
@@ -51,14 +52,13 @@ function App() {
   }, [])
   return (
     <Layout>
-      <GoogleOAuthProvider clientId="868855841872-sc6bivb284l92isq1r9cude5fqhkt149.apps.googleusercontent.com">
+      <GoogleOAuthProvider clientId={clientId}>
         <Routes>
-          {/* <Route path="/" element={<HomePage />} /> */}
+          <Route path='/' element={<Landing />} />
           <Route name="login" path="/login" element={<Login />} />
           <Route path="/courses" element={<CourseCardList />} />
           <Route path="/courses/:codeName" element={<CourseDetailPanel />} />
           {/* <Route path="*" element={<NotFound />} /> */}
-          <Route path='/' element={<Landing />} />
           {/* <Route path='/question' element={<Question/>}/> */}
           <Route path='/reviews/:codeName' element={<ReviewsList />} />
         </Routes>

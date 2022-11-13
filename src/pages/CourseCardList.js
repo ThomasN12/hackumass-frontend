@@ -18,7 +18,7 @@ const CourseCardList = () => {
                 // toast.success(data.success);
             }
         }).catch(err => {
-            toast.success(err.message);
+            // toast.success(err.message);
             console.log(err)
         })
     }, [])
