@@ -1,15 +1,17 @@
 import { useState } from "react";
 const ReviewsList = (props) => {
   return reviews.map((r) => {
-    return <ReviewCard 
-      name={r.name}
-      text={r.text} 
-      rating={r.rating} 
-      fun={r.fun}
-      difficulty={r.difficulty}
-      effort={r.effort}
-      recommended={r.recommended}
-    />;
+    return (
+      <ReviewCard
+        name={r.name}
+        text={r.text}
+        rating={r.rating}
+        fun={r.fun}
+        difficulty={r.difficulty}
+        effort={r.effort}
+        recommended={r.recommended}
+      />
+    );
   });
 };
 
@@ -26,17 +28,7 @@ const ReviewCard = (props) => {
           <div className="card-text">Name: {props.name}</div>
           <div className="card-text">
             Rating: {props.rating}
-            <div className="progress w-50">
-              <div
-                className="progress-bar progress-bar-striped"
-                style={{ width: (props.rating / 5) * 100 + "%" }}
-                role="progressbar"
-                aria-valuemin="0"
-                aria-valuemax="100"
-              >
-                {props.rating}
-              </div>
-            </div>
+            <i className="bi bi-star-fill"></i>
           </div>
           <div className="card-text">Review: {props.text}</div>
         </div>
@@ -51,10 +43,18 @@ const ReviewCard = (props) => {
     <div className="container d-flex justify-content-center">
       <div className="card">
         <div className="card-body">
-          <div className="card-text">Difficulty: {props.difficulty}</div>
-          <div className="card-text">Effort: {props.effort}</div>
-          <div className="card-text">Fun: {props.fun}</div>
-          <div className="card-text">Recommended: {props.recommended}</div>
+          <div className="card-text">
+            Difficulty: {props.difficulty} <i className="bi bi-star-fill"></i>
+          </div>
+          <div className="card-text">
+            Effort: {props.effort} <i className="bi bi-star-fill"></i>
+          </div>
+          <div className="card-text">
+            Fun: {props.fun} <i className="bi bi-star-fill"></i>
+          </div>
+          <div className="card-text">
+            Recommended: {props.recommended} <i className="bi bi-star-fill"></i>
+          </div>
         </div>
         <div className="row d-flex justify-content-center">
           <button onClick={handleViewChange} className="btn btn-primary w-25">
