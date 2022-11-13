@@ -1,8 +1,49 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import axios from "axios";
+
+
 const ReviewsList = (props) => {
+
+  const [reviews, setReviews] = useState([]);
+
+  // const updateReviews = (newReview) => {
+  //   setReviews(prev => {
+  //     prev.push(newReview)
+  //     return prev
+  //   })
+  // }
+  useEffect(() => {
+    const baseUrl = process.env.REACT_APP_ROOT_API;
+    axios.get(`${baseUrl}/review/${props.codeName}`).then(res => {
+      const { data } = res;
+      const { status } = data;
+      if (status === 200)
+      {
+        // console.log(data.data);
+        const foundReviews = data.data;
+        const temp = foundReviews.map(review => {
+          return {
+            id: review._id,
+            name: review.user.firstName + " " + review.user.lastName,
+            text: review.content,
+            rating: review.starRating,
+            difficulty: review.difficultyRating,
+            effort: review.effortLevel,
+            fun: review.funRating,
+            recommended: review.recommendRating,
+          }
+        });
+        setReviews(temp);
+        // toast.success(data.success);
+      }
+    }).catch(err => {
+      console.log(err)
+    })
+  }, [])
   return reviews.map((r) => {
     return (
       <ReviewCard
+        key={r.id}
         name={r.name}
         text={r.text}
         rating={r.rating}
@@ -22,7 +63,7 @@ const ReviewCard = (props) => {
     setViewFront(!viewFront);
   };
   return viewFront ? (
-    <div className="container d-flex justify-content-center">
+    <div className="container d-flex justify-content-center my-5">
       <div className="card w-50">
         <div className="card-body">
           <div className="card-text">Name: {props.name}</div>
@@ -66,43 +107,43 @@ const ReviewCard = (props) => {
   );
 };
 
-const reviews = [
-  {
-    name: "Nhan",
-    text: "lop nhu cac",
-    rating: 1,
-    difficulty: 3,
-    effort: 2,
-    fun: 3,
-    recommended: 3,
-  },
-  {
-    name: "Steve",
-    text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. In tempore sed consequuntur, voluptatem deserunt dolores sequi quibusdam veniam? Nisi impedit odio omnis iure commodi, debitis magnam eligendi ullam sapiente nulla!",
-    rating: 2,
-    difficulty: 3,
-    effort: 2,
-    fun: 3,
-    recommended: 3,
-  },
-  {
-    name: "Thinh",
-    text: "lop nhu cac",
-    rating: 3,
-    difficulty: 3,
-    effort: 2,
-    fun: 3,
-    recommended: 3,
-  },
-  {
-    name: "Dang",
-    text: "lop nhu cac",
-    rating: 3,
-    difficulty: 3,
-    effort: 2,
-    fun: 3,
-    recommended: 3,
-  },
-];
+// const reviews = [
+//   {
+//     name: "Nhan",
+//     text: "lop nhu cac",
+//     rating: 1,
+//     difficulty: 3,
+//     effort: 2,
+//     fun: 3,
+//     recommended: 3,
+//   },
+//   {
+//     name: "Steve",
+//     text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. In tempore sed consequuntur, voluptatem deserunt dolores sequi quibusdam veniam? Nisi impedit odio omnis iure commodi, debitis magnam eligendi ullam sapiente nulla!",
+//     rating: 2,
+//     difficulty: 3,
+//     effort: 2,
+//     fun: 3,
+//     recommended: 3,
+//   },
+//   {
+//     name: "Thinh",
+//     text: "lop nhu cac",
+//     rating: 3,
+//     difficulty: 3,
+//     effort: 2,
+//     fun: 3,
+//     recommended: 3,
+//   },
+//   {
+    // name: "Dang",
+    // text: "lop nhu cac",
+    // rating: 3,
+    // difficulty: 3,
+    // effort: 2,
+    // fun: 3,
+    // recommended: 3,
+//   },
+// ];
 
 export default ReviewsList;

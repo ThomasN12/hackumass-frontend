@@ -1,19 +1,22 @@
 import "./StarRating.css";
+import { useState } from "react";
 const StarRating = (props) => {
+  const [starRating, setStarRating] = useState(3);
+
   return (
     <div className="container border-end border-end-dark">
 
       <div className="">
         <div className="fw-bold">How would you rate this class overall?</div>
-        <div className="rating">
+        <div className="rating" onChange={props.onChangeValue}>
           
           <input type="radio" name="rating" id="rating-5"/>
           <label for="rating-5"></label>
-          <input type="radio" name="rating" id="rating-4" />
+          <input type="radio" name="rating" id="rating-4"/>
           <label for="rating-4"></label>
           <input type="radio" name="rating" id="rating-3" defaultChecked/>
           <label for="rating-3"></label>
-          <input type="radio" name="rating" id="rating-2" />
+          <input type="radio" name="rating" id="rating-2"/>
           <label for="rating-2"></label>
           <input type="radio" name="rating" id="rating-1"/>
           <label for="rating-1"></label>

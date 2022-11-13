@@ -38,7 +38,11 @@ const CourseDetailPanel = () => {
     const updateCourseQuestions = () => {
         handleCourseDetailApi()
     }
-    return (
+
+    // const addReviewHandler = (newReview) => {
+
+    // }
+     return (
         <Fragment>
             <CourseDetail codeName={courseData ? courseData.codeName.toUpperCase() : ""} description={courseData ? courseData.description : ""} />
             <div className="blog-tags">
@@ -47,7 +51,12 @@ const CourseDetailPanel = () => {
                     <button className="button button--pan mx-2" onClick={prev => setIsQuestion(false)}><span>Reviews</span></button>
                 </ul>
             </div>
-            { isQuestion ? <Question courseName={params.codeName} courseQuestions={courseQuestions} onUpdateCourseQuestions={updateCourseQuestions} /> :<ReviewsList /> }
+            {isQuestion ? <Question courseName={params.codeName} courseQuestions={courseQuestions} onUpdateCourseQuestions={updateCourseQuestions} /> :
+                <>
+                    <ReviewForm codeName={courseData ? courseData.codeName.toLowerCase() : ""} />
+                    <ReviewsList codeName={courseData ? courseData.codeName.toLowerCase() : ""} />
+                </>
+            }
         </Fragment>
     )
 }

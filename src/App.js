@@ -15,6 +15,7 @@ import axios from 'axios';
 import ReviewsList from './components/reviews/ReviewsList';
 import { useContext, useEffect } from 'react';
 import AuthContext from './store/auth-context';
+import Landing from './pages/Landing';
 function App() {
   const ctx = useContext(AuthContext);
   useEffect(() => {
@@ -57,7 +58,7 @@ function App() {
           <Route path="/courses" element={<CourseCardList />} />
           <Route path="/courses/:codeName" element={<CourseDetailPanel />} />
           {/* <Route path="*" element={<NotFound />} /> */}
-          <Route path='/' element={<Login />} />
+          <Route path='/' element={<Landing />} />
           {/* <Route path='/question' element={<Question/>}/> */}
           <Route path='/reviews/:codeName' element={<ReviewsList />} />
         </Routes>
