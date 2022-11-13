@@ -14,15 +14,16 @@ const Login = (props) => {
       if (status === 200)
       {
         localStorage.setItem('token', data.data.token);
-        toast.success(data.message);
+        // toast.success(data.message);
+        console.log(data.data.user);
         ctx.onLogin(data.data.user);
       } else
       {
         console.log(data.message)
-        toast.error(data.message);
+        // toast.error(data.message);
       }
     }).catch(err => {
-      toast.error(err.message);
+      // toast.error(err.message);
     })
   }
 
