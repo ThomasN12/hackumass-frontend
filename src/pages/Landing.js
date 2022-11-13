@@ -20,8 +20,8 @@ const Landing = () => {
             </header> */}
 
             <div className={classes.container}>
-                <h3>Html/Css/JavaScript</h3>
-                <h1>Frontend Web Development</h1>
+                <h3>Search for your courses</h3>
+                <h3>Read reviews, ask questions and find friends in any course.</h3>
                 <div className={classes.buttons}>
                     <div>
                         <Link to={"/courses"} className={classes.button}>Learn More</Link>
