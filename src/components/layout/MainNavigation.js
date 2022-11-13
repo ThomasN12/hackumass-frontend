@@ -19,9 +19,14 @@ const MainNavigation = () => {
                             <li className="nav-item">
                                 <Link className="nav-link" to="/courses">Courses</Link>
                             </li>
-                            {ctx.isLoggedIn ? <li className="nav-item">
-                                <button className="btn btn-danger">Logout</button>
-                            </li> : <li className="nav-item">
+                            {ctx.isLoggedIn ? <>
+                                <li className="nav-item">
+                                    <span className="nav-link">Hi, {ctx.userInfo.firstName}</span>
+                                </li>
+                                <li className="nav-item">
+                                    <button className="btn btn-danger">Logout</button>
+                                </li></>
+                                 : <li className="nav-item">
                                 <Link to="/login" className="btn btn-success">Login</Link>
                             </li>}
                             {/* <li className="nav-item dropdown">
